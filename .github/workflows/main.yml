@@ -54,19 +54,11 @@ jobs:
         run: |
           set -e -o pipefail
           ./cruelbuild config                    \
-                       model=${{ matrix.model }} \
+                       model=${{ N976N }} \
                        name="Cruel-devel"        \
                        toolchain=$TOOLCHAIN      \
-                       +magisk                   \
+                       +magisk+canary            \
                        +nohardening              \
-                       +ttl                      \
-                       +wireguard                \
-                       +cifs                     \
-                       +sdfat                    \
-                       +ntfs                     \
-                       +force_dex_wqhd           \
-                       +morosound                \
-                       +boeffla_wl_blocker       \
           2>&1 | tee config.info
 
       - name: Install gcc-aarch64-linux-gnu
